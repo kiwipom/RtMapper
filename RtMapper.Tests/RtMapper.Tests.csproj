@@ -111,9 +111,11 @@
   <ItemGroup>
     <Compile Include="TestClasses\DestNamespace\Address.cs" />
     <Compile Include="TestClasses\DestNamespace\Customer.cs" />
+    <Compile Include="TestClasses\DestNamespace\CustomerType.cs" />
     <Compile Include="TestClasses\DestObject.cs" />
     <Compile Include="TestClasses\SourceNamespace\Address.cs" />
     <Compile Include="TestClasses\SourceNamespace\Customer.cs" />
+    <Compile Include="TestClasses\SourceNamespace\CustomerType.cs" />
     <Compile Include="TestClasses\SourceObject.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -13,5 +13,8 @@ namespace RtMapper.Tests.TestClasses.DestNamespace
 
         public Address PostalAddress { get; set; }
         public Address PhysicalAddress { get; set; }
+
+        public CustomerType CustomerType { get; set; } 
+
     }
 }

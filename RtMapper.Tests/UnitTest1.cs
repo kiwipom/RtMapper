@@ -9,13 +9,13 @@ using RtMapper.Tests.TestClasses;
 
 namespace RtMapper.Tests
 {
-
     using SourceCustomer = RtMapper.Tests.TestClasses.SourceNamespace.Customer;
     using SourceAddress = RtMapper.Tests.TestClasses.SourceNamespace.Address;
+    using SourceCustomerType = RtMapper.Tests.TestClasses.SourceNamespace.CustomerType;
 
     using DestCustomer = RtMapper.Tests.TestClasses.DestNamespace.Customer;
     using DestAddress = RtMapper.Tests.TestClasses.DestNamespace.Address;
-
+    using DestCustomerType = RtMapper.Tests.TestClasses.DestNamespace.CustomerType;
 
     [TestClass]
     public class UnitTest1
@@ -102,8 +102,8 @@ namespace RtMapper.Tests
             RtMap.Clear();
             RtMap.ConfigureMapping<SourceAddress, DestAddress>();
             RtMap.ConfigureMapping<SourceCustomer, DestCustomer>();
-
-
+            RtMap.ConfigureMapping<SourceCustomerType, DestCustomerType>();
+            
             var source = new SourceCustomer
             {
                 Id = 34354,
@@ -125,7 +125,8 @@ namespace RtMapper.Tests
                     City = "Auckland",
                     Postcode = "1010",
                     Country = "New Zealand"
-                }
+                },
+                CustomerType = SourceCustomerType.Active
             };
 
             var instance = RtMap.Map<SourceCustomer, DestCustomer>(source);
@@ -144,6 +145,7 @@ namespace RtMapper.Tests
             Assert.AreEqual("Auckland", instance.PhysicalAddress.City);
             Assert.AreEqual("1010", instance.PhysicalAddress.Postcode);
             Assert.AreEqual("New Zealand", instance.PhysicalAddress.Country);
+            Assert.AreEqual(DestCustomerType.Active, instance.CustomerType);
         }
 
 
