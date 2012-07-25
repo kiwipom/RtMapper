@@ -16,10 +16,9 @@ namespace RtMapper
         internal static Mapping Create<TFrom, TTo>()
         {
             var result = new Mapping();
-            var sourceProperties = typeof(TFrom).GetTypeInfo()
-                .DeclaredProperties;
-            var destProperties = typeof(TTo).GetTypeInfo()
-                .DeclaredProperties;
+            var sourceProperties = typeof (TFrom).GetRuntimeProperties();
+
+            var destProperties = typeof(TTo).GetRuntimeProperties();
 
             var comparer = new PropertyInfoComparer();
             foreach (var sourceProp in sourceProperties)
