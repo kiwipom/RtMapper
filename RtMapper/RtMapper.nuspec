@@ -8,7 +8,7 @@
     <owners>Ian Randall</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>Initial build.</releaseNotes>
+    <releaseNotes>Fixed reflection bug</releaseNotes>
     <copyright>Copyright 2012</copyright>
     <tags>winrt win8 metro object mapper map mapping</tags>
   </metadata>
